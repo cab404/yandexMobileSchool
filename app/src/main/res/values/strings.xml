@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="app_name">Translator</string>
+    <string name="tab_history">History</string>
+    <string name="tab_translator">Translate</string>
+    <string name="tab_favourites">Favourites</string>
+    <string name="tab_settings">Settings</string>
+    <string name="autodetect">Auto-detect</string>
+    <string name="translate">Translate</string>
+
+    <string name="waiting">waiting</string>
+    <string-array name="loading_quotes">
+        <item>booting up HAL</item>
+        <item>rearranging genome</item>
+        <item>reclaiming old apps</item>
+        <item>infusing magic smoke</item>
+        <item>replacing light bulbs</item>
+        <item>shaking but not mixing</item>
+        <item>nurturing little orange tree</item>
+        <item>assembling disassembly sequence</item>
+        <item>recycling nuclear weapons</item>
+        <item>discovering new biomes</item>
+        <item>recognizing captchas</item>
+        <item>loading unique jokes</item>
+        <item>fixing combobulators</item>
+        <item>googling google</item>
+        <item>locating lair</item>
+        <item>capping B</item>
+    </string-array>
+
+</resources>

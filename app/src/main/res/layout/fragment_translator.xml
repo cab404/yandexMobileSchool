@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:showDividers="middle">
+
+    <RelativeLayout
+        android:id="@+id/translator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:id="@+id/language_control_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground"
+            android:clipChildren="false"
+            android:orientation="horizontal">
+
+            <Spinner
+                android:id="@+id/lang_from"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="~~~"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+            <ImageView
+                android:id="@+id/swap_langs"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="?selectableItemBackground"
+                android:clipToPadding="false"
+                android:padding="8dp"
+                android:tint="@color/colorPrimaryDark"
+                app:srcCompat="@drawable/ic_swap_horiz_black_24dp" />
+
+            <Spinner
+                android:id="@+id/lang_to"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="~~~"
+                android:textAppearance="?android:textAppearanceMedium" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/text_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/language_control_panel">
+
+            <EditText
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:lines="3"
+                android:maxLines="3" />
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/text_holder"
+            android:layout_alignTop="@+id/text_holder"
+            android:id="@+id/progress"
+            android:alpha="0"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/translate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/text_holder"
+            android:layout_gravity="end"
+            android:text="@string/translate"
+            app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/translate"
+            android:layout_marginTop="4dp"
+            android:translationY="-30dp"
+            android:id="@+id/translation"
+            android:text="Translation"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

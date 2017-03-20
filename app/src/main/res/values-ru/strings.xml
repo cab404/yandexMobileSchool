@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Переводчик</string>
+    <string name="tab_history">История</string>
+    <string name="tab_translator">Переводчик</string>
+    <string name="tab_favourites">Избранное</string>
+    <string name="tab_settings">Настройки</string>
+    <string name="autodetect">Определить</string>
+    <string name="translate">Перевести</string>
+
+    <string name="waiting">ждем</string>
+    <string-array name="loading_quotes">
+        <item>чиним трамвай</item>
+        <item>загружаем языки</item>
+        <item>проверяем коробки</item>
+        <item>заряжаем лазерную пушку</item>
+        <item>настраиваем дефибриллятор</item>
+        <item>чистим экран с нашей стороны</item>
+        <item>закупаемся продуктами для салата</item>
+        <item>включаем режим волшебной принцессы</item>
+        <item>перевыколпаковываем колпакователь</item>
+        <item>выстраиваем строки лесенкой</item>
+        <item>трансфигурируем нанотрубки</item>
+        <item>закапываем топор войны</item>
+        <item>причесываем единорога</item>
+        <item>готовим лучший сидр</item>
+        <item>восславляем солнце</item>
+        <item>планируем планы</item>
+    </string-array>
+</resources>
