@@ -11,7 +11,6 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.widget.TextView;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -76,15 +75,14 @@ public class SplashActivity extends AppCompatActivity {
                 .subscribe(this::appendLoadingLine);
 
         // Loading list of languages
-        App.get(this)
+        App.instance()
                 .getClient()
                 .getApi()
-                .getLanguages(App.get(this).getUILanguage())
+                .getLanguages(Utils.getUILanguage(this))
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnComplete(this::finite)
                 .subscribe(
-                        (translations) -> App
-                                .get(this)
+                        (translations) -> App.instance()
                                 .setTranslations(translations),
                         (e) -> {
                             Snackbar.make(
@@ -92,8 +90,6 @@ public class SplashActivity extends AppCompatActivity {
                                     "Ошибка сети: " + e.getMessage(),
                                     Snackbar.LENGTH_INDEFINITE
                             ).show();
-                            finite();
-                            throw new RuntimeException(e);
                         }
                 );
     }

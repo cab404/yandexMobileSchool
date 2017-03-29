@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:showDividers="middle">
@@ -12,14 +13,6 @@
         android:orientation="vertical"
         android:padding="8dp">
 
-        <LinearLayout
-            android:id="@+id/language_control_panel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:clipChildren="false"
-            android:orientation="horizontal">
-
             <Spinner
                 android:id="@+id/lang_from"
                 android:layout_width="match_parent"
@@ -27,13 +20,16 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="~~~"
-                android:textAppearance="?android:textAppearanceMedium" />
+                android:layout_toLeftOf="@+id/swap_langs"
+                android:textAppearance="?android:textAppearanceMedium"
+                tools:ignore="RtlHardcoded" />
 
             <ImageView
                 android:id="@+id/swap_langs"
                 android:layout_width="48dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
+                android:layout_height="58dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
                 android:background="?selectableItemBackground"
                 android:clipToPadding="false"
                 android:padding="8dp"
@@ -44,18 +40,18 @@
                 android:id="@+id/lang_to"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
-                android:layout_weight="1"
+                android:layout_toRightOf="@+id/swap_langs"
                 android:gravity="center"
                 android:text="~~~"
-                android:textAppearance="?android:textAppearanceMedium" />
-        </LinearLayout>
+                android:textAppearance="?android:textAppearanceMedium"
+                tools:ignore="RtlHardcoded" />
 
         <FrameLayout
             android:id="@+id/text_holder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@id/language_control_panel">
+            android:layout_below="@+id/swap_langs">
 
             <EditText
                 android:id="@+id/text"
@@ -90,11 +86,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/translate"
+            android:layout_below="@+id/translate"
             android:layout_marginTop="4dp"
+            android:textIsSelectable="true"
             android:translationY="-30dp"
             android:id="@+id/translation"
-            android:text="Translation"
             android:gravity="center"
             android:textAppearance="?android:textAppearanceLarge" />
 

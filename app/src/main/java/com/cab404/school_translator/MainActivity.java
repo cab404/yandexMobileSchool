@@ -3,8 +3,8 @@ package com.cab404.school_translator;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.view.Menu;
-import android.view.MenuItem;
 
+import com.cab404.school_translator.fragment.HistoryFragment;
 import com.cab404.school_translator.fragment.TranslateFragment;
 
 import butterknife.BindView;
@@ -29,6 +29,12 @@ public class MainActivity extends BaseActivity {
                     getSupportFragmentManager()
                             .beginTransaction()
                             .replace(R.id.content, new TranslateFragment())
+                            .commit();
+                    break;
+                case R.id.tab_history:
+                    getSupportFragmentManager()
+                            .beginTransaction()
+                            .replace(R.id.content, new HistoryFragment())
                             .commit();
                     break;
             }

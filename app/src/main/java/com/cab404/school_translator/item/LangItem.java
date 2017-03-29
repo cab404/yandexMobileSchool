@@ -12,6 +12,8 @@ import com.cab404.school_translator.R;
 
 
 /**
+ * Simple item for languages in spinners.
+ * <p>
  * Created at 17:44 on 20/03/17
  *
  * @author cab404

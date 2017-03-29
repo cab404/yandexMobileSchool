@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'org.greenrobot.greendao'
 
 Properties local = new Properties()
 local.load(new FileReader("local.properties"))
@@ -37,34 +38,43 @@ android {
 
 }
 
+ext {
+    vSupport = '25.3.0'
+    vRetrofit = '2.2.0'
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
+    // Processors and stuff
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 
+    // Support libraries and stuff
+    compile "com.android.support:design:$vSupport"
+    compile "com.android.support:appcompat-v7:$vSupport"
+
     compile 'com.jakewharton.rxbinding2:rxbinding-design:2.0.0'
-    compile 'com.android.support:design:25.3.0'
-
     compile 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0'
-    compile 'com.android.support:appcompat-v7:25.3.0'
 
-    compile 'com.android.support:support-vector-drawable:25.3.0'
+    compile "com.android.support:support-vector-drawable:$vSupport"
 
+    // RX and stuff
     compile 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
     compile 'io.reactivex.rxjava2:rxjava:2.0.1'
 
+    // Retrofit
+    compile "com.squareup.retrofit2:adapter-rxjava2:$vRetrofit"
+    compile "com.squareup.retrofit2:converter-gson:$vRetrofit"
+    compile "com.squareup.retrofit2:retrofit:$vRetrofit"
+
+    // Misc.
     compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    compile 'com.squareup.okhttp3:okhttp:3.6.0'
-
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
-    compile 'com.squareup.retrofit2:retrofit:2.2.0'
-
+    compile 'org.greenrobot:greendao:3.2.0'
     compile 'com.cab404:chumroll:1.0.5'
 
     testCompile 'junit:junit:4.12'

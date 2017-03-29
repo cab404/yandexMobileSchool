@@ -27,4 +27,8 @@
         <item>восславляем солнце</item>
         <item>планируем планы</item>
     </string-array>
+    <string name="copied_to_clipboard">Перевод скопирован в буфер обмена!</string>
+    <string name="network_problems">Похоже у нас проблемы с сетью :(</string>
+    <string name="removed_from_favs">Перевод убран из избранного</string>
+    <string name="added_to_favs">Перевод добавлен в избранное</string>
 </resources>

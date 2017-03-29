@@ -9,6 +9,10 @@
     <string name="translate">Translate</string>
 
     <string name="waiting">waiting</string>
+    <string name="network_problems">Looks like we have some issues with your connection</string>
+    <string name="removed_from_favs">Removed translation from favourites</string>
+    <string name="added_to_favs">Translation added to favourites</string>
+    <string name="copied_to_clipboard">Translation copied to clipboard!</string>
     <string-array name="loading_quotes">
         <item>booting up HAL</item>
         <item>rearranging genome</item>

@@ -1,6 +1,10 @@
 package com.cab404.school_translator.net;
 
+import java.io.IOException;
+
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -24,18 +28,23 @@ public class YandexTranslateClient {
     public YandexTranslateClient(final String apiKey) {
         final OkHttpClient client = new OkHttpClient.Builder()
                 // Interceptor for adding api token
-                .addInterceptor(chain -> chain.proceed(
-                        chain.request()
-                                .newBuilder()
-                                .url(
-                                        chain.request().url()
-                                                .newBuilder()
-                                                .addQueryParameter("key", apiKey)
-                                                .build()
-                                ).build()
-                        )
+                .addInterceptor(chain -> {
+                            Request request = chain.request();
+                            try {
+                                return chain.proceed(
+                                        request.newBuilder().url(
+                                                request.url()
+                                                        .newBuilder()
+                                                        .addQueryParameter("key", apiKey)
+                                                        .build()
+                                        ).build()
+                                );
+                            } catch (Exception e) {
+                                throw new IOException(e);
+                            }
+                        }
                 )
-                .addInterceptor(new HttpLoggingInterceptor())
+                .addInterceptor(new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
                 .build();
         final Retrofit retrofit = new Retrofit.Builder()
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())

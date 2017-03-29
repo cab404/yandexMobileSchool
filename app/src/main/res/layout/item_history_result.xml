@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:id="@+id/root">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:animateLayoutChanges="true"
+        tools:ignore="RtlHardcoded">
+
+        <TextView
+            android:id="@+id/dir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/icon_swap"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+
+            android:padding="8dp"
+            android:text="en-ru"
+            android:textAppearance="?android:textAppearanceSmall" />
+
+        <ImageView
+            android:id="@+id/icon_swap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:tint="@color/colorPrimary"
+            app:srcCompat="@drawable/ic_arrow_forward_black_24dp" />
+
+        <TextView
+            android:id="@+id/from"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/icon_swap"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="8dp"
+            android:text="Ice Cream"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/icon_swap"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            android:padding="8dp"
+            android:text="Мороженое"
+            android:textAppearance="?android:textAppearanceMedium" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/favourites"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:padding="8dp"
+        android:tint="@color/colorAccent"
+        app:srcCompat="@drawable/ic_favorite_border_black_24dp" />
+
+</LinearLayout>
+
